@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -8,8 +9,21 @@ import {
   QrCode, Smartphone, BarChart3,
 } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import StopAutocomplete from "@/components/ui/StopAutocomplete";
+import { getAllStops, findConnectingRoutes } from "@/data/stopUtils";
 
 export default function HomePage() {
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const allStops = useMemo(() => getAllStops(), []);
+
+  const results = useMemo(() => {
+    if (!from.trim() || !to.trim()) return [];
+    return findConnectingRoutes(from, to);
+  }, [from, to]);
+
+  const showResults = from.trim() && to.trim();
+
   return (
     <>
       {/* Hero Section */}
@@ -30,29 +44,75 @@ export default function HomePage() {
                 {/* Search Form */}
                 <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm max-w-sm">
                   <div className="space-y-3 mb-4">
-                    <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-                      <MapPin className="w-4 h-4 text-primary-500 shrink-0" />
-                      <input
-                        type="text"
-                        placeholder="From (e.g. Sudirman Station)"
-                        className="w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
-                      />
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-                      <MapPin className="w-4 h-4 text-slate-400 shrink-0" />
-                      <input
-                        type="text"
-                        placeholder="To (e.g. Monas)"
-                        className="w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
-                      />
-                    </div>
+                    <StopAutocomplete
+                      id="hero-from"
+                      value={from}
+                      onChange={setFrom}
+                      placeholder="Dari mana? (cth: Terminal Arjosari)"
+                      allStops={allStops}
+                      iconColor="text-primary-500"
+                    />
+                    <StopAutocomplete
+                      id="hero-to"
+                      value={to}
+                      onChange={setTo}
+                      placeholder="Ke mana? (cth: Jl. Kawi)"
+                      allStops={allStops}
+                      iconColor="text-slate-400"
+                    />
                   </div>
+
+                  {/* Search Results */}
+                  {showResults && (
+                    <div className="mb-4">
+                      {results.length > 0 ? (
+                        <div className="space-y-2">
+                          <p className="text-xs font-medium text-slate-500 mb-2">
+                            {results.length} rute ditemukan
+                          </p>
+                          {results.map((route) => (
+                            <Link
+                              key={route.slug}
+                              href={`/information/${route.slug}`}
+                              className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-primary-300 hover:bg-primary-50/50 transition-all group"
+                            >
+                              <div
+                                className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0"
+                                style={{ backgroundColor: route.color }}
+                              >
+                                {route.code}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold text-slate-800 truncate">
+                                  {route.name}
+                                </p>
+                                <p className="text-xs text-slate-400">
+                                  {route.depart.length} halte • {route.chars.panjang}
+                                </p>
+                              </div>
+                              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary-500 transition-colors shrink-0" />
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-center py-3">
+                          <p className="text-sm text-slate-400">
+                            Tidak ada rute langsung ditemukan
+                          </p>
+                          <p className="text-xs text-slate-400 mt-1">
+                            Coba lokasi lain atau cek halaman rute
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <Link
                     href="/routes"
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
                   >
                     <Search className="w-4 h-4" />
-                    Find Route
+                    Lihat Semua Rute
                   </Link>
                 </div>
               </AnimateOnScroll>

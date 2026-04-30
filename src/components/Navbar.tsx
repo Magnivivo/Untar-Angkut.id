@@ -58,11 +58,20 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Login */}
+          {/* Auth */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors">
+            <Link
+              href="/login"
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Login
-            </button>
+            </Link>
+            <Link
+              href="/register"
+              className="text-sm font-semibold px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors"
+            >
+              Register
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -97,9 +106,20 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <button className="w-full mt-2 px-4 py-2.5 text-sm font-medium text-primary-600 hover:bg-primary-50 rounded-lg text-left">
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="block mt-2 px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
+            >
               Login
-            </button>
+            </Link>
+            <Link
+              href="/register"
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg text-center"
+            >
+              Register
+            </Link>
           </div>
         </div>
       )}
