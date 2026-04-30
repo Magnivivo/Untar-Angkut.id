@@ -123,7 +123,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/hero1.png"
+                    src="/images/hero1.jpg"
                     alt="Urban transit infrastructure"
                     width={640}
                     height={400}
