@@ -128,6 +128,7 @@ export default function HomePage() {
                     width={640}
                     height={400}
                     className="w-full h-[400px] object-cover"
+                    style={{ width: "100%", height: "auto" }}
                     priority
                   />
                 </div>
