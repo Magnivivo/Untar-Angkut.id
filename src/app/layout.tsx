@@ -15,25 +15,25 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Angkut — Smart Public Transportation Platform",
+  title: "Angkut — Platform Transportasi Publik Pintar",
   description:
-    "Find the best public transport routes, track nearby vehicles in real-time, and pay seamlessly with QRIS or cash. Your smarter way to move around the city.",
+    "Temukan rute transportasi umum terbaik, lacak kendaraan terdekat secara real-time, dan bayar dengan mudah menggunakan QRIS atau tunai. Cara yang lebih pintar untuk berkeliling kota.",
   keywords: [
     "angkut",
-    "public transportation",
+    "transportasi umum",
     "angkot",
     "bus",
     "feeder",
     "transit",
-    "smart city",
-    "urban mobility",
+    "kota pintar",
+    "mobilitas perkotaan",
     "QRIS",
-    "route planner",
+    "perencana rute",
   ],
   openGraph: {
-    title: "Angkut — Smart Public Transportation Platform",
+    title: "Angkut — Platform Transportasi Publik Pintar",
     description:
-      "Find the best public transport routes, track nearby vehicles in real-time, and pay seamlessly.",
+      "Temukan rute transportasi umum terbaik, lacak kendaraan terdekat secara real-time, dan bayar dengan mudah.",
     type: "website",
   },
 };
@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-slate-800">
