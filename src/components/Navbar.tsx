@@ -6,10 +6,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "Routes", href: "/routes" },
-  { label: "Information", href: "/information" },
-  { label: "About Us", href: "/about" },
+  { label: "Beranda", href: "/" },
+  { label: "Rute", href: "/routes" },
+  { label: "Informasi", href: "/information" },
+  { label: "Tentang Kami", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -64,13 +64,13 @@ export default function Navbar() {
               href="/login"
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
             >
-              Login
+              Masuk
             </Link>
             <Link
               href="/register"
               className="text-sm font-semibold px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors"
             >
-              Register
+              Daftar
             </Link>
           </div>
 
@@ -111,14 +111,14 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="block mt-2 px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
             >
-              Login
+              Masuk
             </Link>
             <Link
               href="/register"
               onClick={() => setOpen(false)}
               className="block px-4 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg text-center"
             >
-              Register
+              Daftar
             </Link>
           </div>
         </div>

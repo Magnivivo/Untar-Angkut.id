@@ -34,11 +34,11 @@ export default function HomePage() {
             <div>
               <AnimateOnScroll>
                 <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-4">
-                  Orchestrated{" "}
-                  <span className="text-primary-600">Movement.</span>
+                  Pergerakan{" "}
+                  <span className="text-primary-600">Terorkestrasi.</span>
                 </h1>
                 <p className="text-slate-500 text-lg mb-8 max-w-md">
-                  Real-time public infrastructure mapping and routing for the modern commuter.
+                  Pemetaan dan perutean infrastruktur publik secara real-time untuk komuter modern.
                 </p>
 
                 {/* Search Form */}
@@ -123,7 +123,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/hero.png"
+                    src="/images/hero1.png"
                     alt="Urban transit infrastructure"
                     width={640}
                     height={400}
@@ -135,7 +135,7 @@ export default function HomePage() {
                 {/* Status Badge */}
                 <div className="absolute bottom-4 left-4 bg-slate-900/80 backdrop-blur-sm text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
                   <BarChart3 className="w-4 h-4 text-primary-400" />
-                  Live System Status: <span className="text-primary-400 font-medium">Optimal</span>
+                  Status Sistem Langsung: <span className="text-primary-400 font-medium">Optimal</span>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -143,33 +143,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Regions */}
+      {/* Terminal Hubs */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
-            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">
-              Featured Regions
-            </h2>
+            <div className="mb-8">
+              <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">
+                Terminal Utama Malang
+              </h2>
+              <p className="text-slate-500 text-sm">Tiga terminal utama yang melayani seluruh jaringan angkot Kota Malang.</p>
+            </div>
           </AnimateOnScroll>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Jakarta", subtitle: "Greater Metropolitan Area", img: "/images/jakarta.png" },
-              { name: "Bandung", subtitle: "West Java Hub", img: "/images/bandung.png" },
-              { name: "Surabaya", subtitle: "East Java Network", img: "/images/surabaya.png" },
-            ].map((city, i) => (
-              <AnimateOnScroll key={city.name} delay={i * 100}>
-                <Link href="/information" className="group block">
+              { name: "Terminal Arjosari", subtitle: "Pintu gerbang utara — pusat koneksi terbesar", img: "/images/arjosari.jpg", href: "/information" },
+              { name: "Terminal Landungsari", subtitle: "Hub barat — akses kampus & pusat kota", img: "/images/landungsari.jpg", href: "/information" },
+              { name: "Terminal Hamid Rusdi", subtitle: "Hub selatan — koneksi lintas jalur terlengkap", img: "/images/hamidrusdi.jpg", href: "/information" },
+            ].map((terminal, i) => (
+              <AnimateOnScroll key={terminal.name} delay={i * 100}>
+                <Link href={terminal.href} className="group block">
                   <div className="relative overflow-hidden rounded-2xl aspect-[16/10] card-hover">
                     <Image
-                      src={city.img}
-                      alt={city.name}
+                      src={terminal.img}
+                      alt={terminal.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="font-heading font-bold text-white text-lg">{city.name}</h3>
-                      <p className="text-white/70 text-sm">{city.subtitle}</p>
+                      <h3 className="font-heading font-bold text-white text-base">{terminal.name}</h3>
+                      <p className="text-white/70 text-xs mt-0.5">{terminal.subtitle}</p>
                     </div>
                   </div>
                 </Link>
@@ -187,14 +190,14 @@ export default function HomePage() {
             <div>
               <AnimateOnScroll>
                 <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">
-                  Civic Infrastructure at Scale
+                  Infrastruktur Sipil Skala Besar
                 </h2>
               </AnimateOnScroll>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { icon: Navigation, title: "Real-time Tracking", desc: "Live telemetry from entire municipal fleets.", color: "text-primary-600 bg-primary-50" },
-                  { icon: QrCode, title: "Cashless Payment (QRIS)", desc: "Seamless integration with national payment gateways.", color: "text-amber-600 bg-amber-50" },
-                  { icon: Route, title: "Optimized Routes", desc: "Multi-modal journey planning considering live traffic and schedule adherence.", color: "text-accent-600 bg-accent-50" },
+                  { icon: Navigation, title: "Pelacakan Real-time", desc: "Telemetri langsung dari seluruh armada kota.", color: "text-primary-600 bg-primary-50" },
+                  { icon: QrCode, title: "Pembayaran Nontunai (QRIS)", desc: "Integrasi mulus dengan gerbang pembayaran nasional.", color: "text-amber-600 bg-amber-50" },
+                  { icon: Route, title: "Rute Optimal", desc: "Perencanaan perjalanan multi-moda dengan mempertimbangkan lalu lintas langsung dan jadwal.", color: "text-accent-600 bg-accent-50" },
                 ].map((f, i) => (
                   <AnimateOnScroll key={f.title} delay={i * 100}>
                     <div className="bg-white rounded-xl p-5 border border-slate-200 card-hover">
@@ -213,15 +216,15 @@ export default function HomePage() {
             <div>
               <AnimateOnScroll>
                 <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">
-                  Supported Modalities
+                  Moda yang Didukung
                 </h2>
               </AnimateOnScroll>
               <div className="space-y-3">
                 {[
-                  { icon: Bus, name: "Angkot", desc: "Micro-transit networks", count: "500+" },
-                  { icon: Bus, name: "TransJakarta Bus", desc: "BRT Corridors", count: "200+" },
-                  { icon: Train, name: "KRL Feeder", desc: "Commuter rail connections", count: "150+" },
-                  { icon: Bus, name: "City Shuttle", desc: "Express urban routes", count: "80+" },
+                  { icon: Bus, name: "Angkot", desc: "Jaringan mikro-transit", count: "500+" },
+                  { icon: Bus, name: "Bus TransJakarta", desc: "Koridor BRT", count: "200+" },
+                  { icon: Train, name: "Feeder KRL", desc: "Koneksi kereta komuter", count: "150+" },
+                  { icon: Bus, name: "Shuttle Kota", desc: "Rute perkotaan ekspres", count: "80+" },
                 ].map((t, i) => (
                   <AnimateOnScroll key={t.name} delay={i * 80}>
                     <Link href="/routes" className="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-200 card-hover group">
@@ -232,7 +235,7 @@ export default function HomePage() {
                         <h3 className="font-heading font-semibold text-slate-900 text-sm">{t.name}</h3>
                         <p className="text-xs text-slate-400">{t.desc}</p>
                       </div>
-                      <span className="text-xs font-medium text-slate-400">{t.count} routes</span>
+                      <span className="text-xs font-medium text-slate-400">{t.count} rute</span>
                       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-primary-500 transition-colors" />
                     </Link>
                   </AnimateOnScroll>
@@ -252,22 +255,22 @@ export default function HomePage() {
               <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-2">
-                    Pocket-sized Reliability.
+                    Keandalan dalam Genggaman.
                   </h2>
                   <p className="text-slate-400 text-sm max-w-lg">
-                    Download the Angkut mobile application for personalized alerts, offline maps, and tap-to-pay boarding functionality.
+                    Unduh aplikasi seluler Angkut untuk peringatan yang dipersonalisasi, peta offline, dan fitur pembayaran sekali sentuh.
                   </p>
                 </div>
                 <div className="flex gap-3 shrink-0">
                   <button className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-900 text-sm font-semibold hover:bg-slate-100 transition-colors">
                     <Smartphone className="w-4 h-4" />
-                    Download App
+                    Unduh Aplikasi
                   </button>
                   <Link
                     href="/routes"
                     className="flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-600 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
                   >
-                    Explore Routes
+                    Jelajahi Rute
                   </Link>
                 </div>
               </div>

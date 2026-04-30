@@ -2,19 +2,19 @@ import Link from "next/link";
 
 const footerLinks = [
   {
-    title: "Services",
+    title: "Layanan",
     links: [
-      { label: "Schedules", href: "/information" },
-      { label: "Live Map", href: "/routes" },
-      { label: "Accessibility", href: "/information" },
+      { label: "Jadwal", href: "/information" },
+      { label: "Peta Langsung", href: "/routes" },
+      { label: "Aksesibilitas", href: "/information" },
     ],
   },
   {
-    title: "Information",
+    title: "Informasi",
     links: [
-      { label: "Support", href: "/about" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Partnerships", href: "/about" },
+      { label: "Dukungan", href: "/about" },
+      { label: "Kebijakan Privasi", href: "#" },
+      { label: "Kemitraan", href: "/about" },
     ],
   },
 ];
@@ -30,7 +30,7 @@ export default function Footer() {
               Angkut
             </Link>
             <p className="text-sm text-slate-400 mt-2 max-w-xs">
-              © {new Date().getFullYear()} Angkut. Civic Reliability in Motion.
+              © {new Date().getFullYear()} Angkut.
             </p>
           </div>
 

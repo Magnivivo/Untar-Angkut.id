@@ -150,7 +150,7 @@ export default function RouteDetailPage({
               style={{ backgroundColor: route.color }}
             >
               <Navigation className="w-4 h-4" />
-              Get Directions
+              Dapatkan Petunjuk Arah
             </button>
           </div>
         </div>

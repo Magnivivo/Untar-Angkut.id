@@ -8,13 +8,13 @@ import {
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 const team = [
-  { name: "Dr. Elena Rostova", role: "Chief Executive Officer", initials: "ER" },
-  { name: "Marcus Vance", role: "Head of Operations", initials: "MV" },
-  { name: "Sarah Chen", role: "VP of Engineering", initials: "SC" },
-  { name: "David Okafor", role: "Director of Civic Design", initials: "DO" },
+  { name: "Axel Nathaniel", role: "Chief Executive Officer", initials: "AN" },
+  { name: "Kiyo Vincent", role: "Head of Operations", initials: "KV" },
+  { name: "Yosef Pradita", role: "VP of Engineering", initials: "YP" },
+  { name: "Tanujaya Hartono Sotyohadi", role: "Director of Civic Design", initials: "THS" },
 ];
 
-const partners = ["Metrolink", "CityTransit", "PayFast", "CivicBank"];
+const partners = ["TransJatim", "Wira Wiri", "Suroboyo Bus", "Macito"];
 
 export default function AboutPage() {
   return (
@@ -26,11 +26,11 @@ export default function AboutPage() {
             <AnimateOnScroll>
               <div>
                 <h1 className="font-heading text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4">
-                  Civic Reliability{" "}
-                  <span className="text-primary-600">in Motion</span>
+                  Keandalan Sipil{" "}
+                  <span className="text-primary-600">yang Bergerak</span>
                 </h1>
                 <p className="text-slate-500 text-lg leading-relaxed max-w-md">
-                  We bridge the gap between high-velocity technology and institutional trust, building the digital infrastructure for modern urban mobility.
+                  Kami menjembatani teknologi berkecepatan tinggi dengan kepercayaan institusional, membangun infrastruktur digital untuk mobilitas perkotaan modern.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                   <div className="w-24 h-24 rounded-full gradient-primary text-white flex items-center justify-center mx-auto mb-4">
                     <Globe className="w-12 h-12" />
                   </div>
-                  <p className="text-sm font-medium text-slate-500">Connecting communities through transit</p>
+                  <p className="text-sm font-medium text-slate-500">Menghubungkan komunitas melalui transit</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -53,23 +53,22 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-12">
-              <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Our Core Mandate</h2>
-              <p className="text-slate-500 text-sm">The principles guiding our urban infrastructure.</p>
+              <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Mandat Utama Kami</h2>
+              <p className="text-slate-500 text-sm">Prinsip-prinsip yang memandu infrastruktur perkotaan kami.</p>
             </div>
           </AnimateOnScroll>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Eye, title: "The Vision", desc: "To create a seamless, universally accessible transit ecosystem where technology empowers every commuter with clarity and confidence." },
-              { icon: Target, title: "The Mission", desc: "Deploying robust, user-centric tools that provide real-time data, optimize routes, and minimize unpredictability in public transportation networks." },
-              { icon: Shield, title: "The Commitment", desc: "We prioritize data integrity, system stability, and equitable access so all, ensuring civic reliability in every interaction." },
+              { icon: Eye, title: "Visi", desc: "Menciptakan ekosistem transit yang mulus dan dapat diakses secara universal, di mana teknologi memberdayakan setiap komuter dengan kejelasan dan keyakinan." },
+              { icon: Target, title: "Misi", desc: "Menyediakan alat yang tangguh dan berpusat pada pengguna yang memberikan data real-time, mengoptimalkan rute, dan meminimalkan ketidakpastian di jaringan transportasi umum." },
+              { icon: Shield, title: "Komitmen", desc: "Kami memprioritaskan integritas data, stabilitas sistem, dan akses yang adil bagi semua orang, memastikan keandalan sipil dalam setiap interaksi." },
             ].map((item, i) => (
               <AnimateOnScroll key={item.title} delay={i * 100}>
                 <div className="bg-white rounded-xl p-6 border border-slate-200 card-hover text-center">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${
-                    i === 0 ? "bg-slate-100 text-slate-600" :
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${i === 0 ? "bg-slate-100 text-slate-600" :
                     i === 1 ? "bg-primary-50 text-primary-600" :
-                    "bg-accent-50 text-accent-600"
-                  }`}>
+                      "bg-accent-50 text-accent-600"
+                    }`}>
                     <item.icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-heading font-bold text-slate-900 mb-2">{item.title}</h3>
@@ -85,7 +84,7 @@ export default function AboutPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
-            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">Why We Built Angkut</h2>
+            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">Mengapa Kami Membangun Angkut</h2>
           </AnimateOnScroll>
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -93,10 +92,10 @@ export default function AboutPage() {
                 <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
                   <div className="flex items-center gap-2 mb-3">
                     <AlertTriangle className="w-5 h-5 text-amber-600" />
-                    <h3 className="font-heading font-bold text-amber-800">The Challenge</h3>
+                    <h3 className="font-heading font-bold text-amber-800">Tantangan</h3>
                   </div>
                   <p className="text-sm text-amber-700 leading-relaxed">
-                    Urban mobility is often plagued by fragmented data, unpredictable schedules, and disconnected payment systems, leading to commuter frustration and inefficient city planning.
+                    Mobilitas perkotaan sering terhambat oleh data yang terfragmentasi, jadwal yang tidak terduga, dan sistem pembayaran yang terputus, menyebabkan frustrasi komuter dan perencanaan kota yang tidak efisien.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -104,10 +103,10 @@ export default function AboutPage() {
                 <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle className="w-5 h-5 text-primary-600" />
-                    <h3 className="font-heading font-bold text-primary-800">The Solution</h3>
+                    <h3 className="font-heading font-bold text-primary-800">Solusi</h3>
                   </div>
                   <p className="text-sm text-primary-700 leading-relaxed">
-                    We unify disparate municipal transit feeds into a single, highly legible platform. By providing real-time tracking, standardized routing, and integrated ticketing, we bring order to the chaos.
+                    Kami menyatukan berbagai umpan transit kota ke dalam satu platform yang sangat mudah dibaca. Dengan pelacakan real-time, perutean terstandarisasi, dan tiket terintegrasi, kami menata kekacauan yang ada.
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -117,13 +116,13 @@ export default function AboutPage() {
                 <div className="bg-slate-100 rounded-xl flex items-center justify-center p-6">
                   <div className="text-center">
                     <Zap className="w-10 h-10 text-primary-500 mx-auto mb-2" />
-                    <p className="text-xs text-slate-500 font-medium">Real-time Data</p>
+                    <p className="text-xs text-slate-500 font-medium">Data Real-time</p>
                   </div>
                 </div>
                 <div className="bg-slate-100 rounded-xl flex items-center justify-center p-6">
                   <div className="text-center">
                     <Users className="w-10 h-10 text-accent-500 mx-auto mb-2" />
-                    <p className="text-xs text-slate-500 font-medium">Community First</p>
+                    <p className="text-xs text-slate-500 font-medium">Utamakan Komunitas</p>
                   </div>
                 </div>
               </div>
@@ -137,8 +136,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-12">
-              <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Leadership Team</h2>
-              <p className="text-slate-500 text-sm">Experts in urban planning, software engineering, and civic design.</p>
+              <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Tim Kepemimpinan</h2>
+              <p className="text-slate-500 text-sm">Ahli dalam perencanaan kota, rekayasa perangkat lunak, dan desain sipil.</p>
             </div>
           </AnimateOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -162,7 +161,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">
-              Trusted by Municipal Authorities & Payment Networks
+              Dipercaya oleh Otoritas Kota & Jaringan Pembayaran
             </p>
             <div className="flex items-center justify-center gap-12 flex-wrap">
               {partners.map((p) => (
@@ -181,30 +180,30 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <AnimateOnScroll>
               <div>
-                <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Get in Touch</h2>
-                <p className="text-sm text-slate-500 mb-6">For agency partnerships or press inquiries, please use the form below.</p>
+                <h2 className="font-heading text-2xl font-bold text-slate-900 mb-2">Hubungi Kami</h2>
+                <p className="text-sm text-slate-500 mb-6">Untuk kemitraan agensi atau pertanyaan pers, silakan gunakan formulir di bawah ini.</p>
 
                 <form className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-semibold text-slate-600 mb-1.5 block">First Name</label>
+                      <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Nama Depan</label>
                       <input type="text" className="w-full p-3 bg-white rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-400 transition-colors" />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Last Name</label>
+                      <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Nama Belakang</label>
                       <input type="text" className="w-full p-3 bg-white rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-400 transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Email Address</label>
+                    <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Alamat Email</label>
                     <input type="email" className="w-full p-3 bg-white rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-400 transition-colors" />
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Message</label>
+                    <label className="text-xs font-semibold text-slate-600 mb-1.5 block">Pesan</label>
                     <textarea rows={4} className="w-full p-3 bg-white rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-400 transition-colors resize-none" />
                   </div>
                   <button type="submit" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600 transition-colors">
-                    Send Message
+                    Kirim Pesan
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
@@ -224,11 +223,11 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-primary-500 mt-0.5 shrink-0" />
                     <div>
-                      <h3 className="font-heading font-semibold text-slate-900 text-sm mb-1">Headquarters</h3>
+                      <h3 className="font-heading font-semibold text-slate-900 text-sm mb-1">Kantor Pusat</h3>
                       <p className="text-xs text-slate-500 leading-relaxed">
-                        Universitas Tarumanagara<br />
-                        Jl. Letjen S. Parman No.1<br />
-                        Jakarta Barat, DKI Jakarta 11440
+                        Universitas Bina Nusantara<br />
+                        Jl. Kyai Haji Syahdan No. 9<br />
+                        Jakarta Barat, DKI Jakarta 11480
                       </p>
                     </div>
                   </div>
